@@ -1,0 +1,179 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size:18px;
+	color: #f5f5f5;
+	margin: 20px;
+	padding: 0;
+ }
+
+p {
+	text-align:justify;
+	margin:30px;
+}
+
+.menu ul {
+	list-style: none;
+	padding: 8px;
+	margin: 50px;
+	display: flex;
+	gap: 40px;
+}
+
+.menu li {
+	position: relative;
+}
+
+.menu a {
+	position: relative;
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	transition: 0.3s;
+}
+
+.menu a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 0;
+	height: 2px;
+	background: #3F94D1;
+	transition: width 0.3s;
+}
+
+.menu a:hover::after {
+	color:#3F94D1;
+	width:100%;
+}
+
+/*---sub menu---*/
+.submenu {
+	position: absolute;
+	top: 1px;
+	left: 0;
+	background: #222;
+	border-radius: 3px;
+	padding: 5px 0;
+	min-width: 3px;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(15px);
+	transition 0.35s ease;
+}
+
+
+/* elementos internos*/
+.submenu li {
+	padding:8px 20px;
+}
+
+.submenu li:hover {
+	background:#333;
+}
+
+.submenu a {
+	font-size:18px;
+	display:block;
+} 
+
+.dropdown:focus-within .submenu {
+	opacity:1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+/*---suave sombra bajo el menu---*/
+.dropdown:hover .submenu {
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+img {
+	width:50%;
+	heigth:60px;
+ } 
+
+/*imagen escala*/
+
+.imagen.escale {
+	width: 400px;
+	height: 200px;
+	transform:scale(1);
+	object-fit: cover;
+	transition:transform 0.5s ease;
+}
+
+.imagen.escale:hover {
+	transform:scale(1.2);
+}
+
+/* Contenedor principal */
+.comment-container {
+	max-width: 800px;
+	margin: 10px auto;
+	padding: 8px 10px;
+	background-color: #1D1D1F;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	font-family: 'Segoe UI', sans-serif;
+	border: 1px solid #000000;
+}
+
+/* Título */
+.comment-container h3 {
+	font-size: 1.1rem;
+	margin-bottom: 15px;
+	color: #ffffff;
+}
+
+/* Formulario */
+#comment-form {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* Input de nombre */
+#comment-form input {
+	width: 250px;
+	padding: 8px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	background-color: #3B3B3D;
+	color: #ffffff;
+}
+
+/* El área de texto */
+#comment-form textarea {
+	width: 80%;
+	height: 35px;
+	padding: 10px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	resize: none; /* Evita que el usuario la deforme */
+	transition: height 0.3s ease; /* Efecto para que crezca el cuadro de comentario al hacer clic */
+	background-color: #3B3B3D;
+	color: #ffffff;	
+}
+
+/* Botón de enviar */
+button {
+	background: linear-gradient(135deg, #4a90e2, #357abd);
+	color: white;
+	border: none;
+	padding: 12px 25px;
+	font-weight: bold;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.2s, background 0.3s;
+}
+
+/* Efectos para el botón */
+button:hover {
+	background: linear-gradient(135deg, #357abd, #285a8f);
+	transform: translateY(-2px); /* Se eleva un poco al pasar el ratón */
+}
+
+button:active {
+	transform: translateY(0); /* Vuelve a su lugar al hacer clic */
+}
